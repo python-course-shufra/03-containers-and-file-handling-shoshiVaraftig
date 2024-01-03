@@ -39,54 +39,53 @@ def add_student(name, email=None):
         email = f"{name.lower()}@example.com"
     student = {'name': name, 'email': email, 'grades': []}
     classroom.append(student)
-    pass
+
 
 def delete_student(name):
     """Delete a student from the classroom"""
-    index=index_student(name)
-    del classroom[index]
-    pass
+    index = index_student(name)
+    if index != -1:
+        del classroom[index]
 
 
 def set_email(name, email):
     """Sets the email of the student"""
-    index=index_student(name)
-    classroom[index]['email']=email
-    pass
+    index = index_student(name)
+    if index != -1:
+        classroom[index]['email'] = email
+
 
 def add_grade(name, profession, grade):
+    index = index_student(name)
+    if index != -1:
+        classroom[index]['grades'].append((profession, grade))
 
-    index=index_student(name)
-    classroom[index]['grades'].append({'profession': profession, 'grade': grade})
-    pass
+
 def avg_grade(name, profession):
-   avg=0
-   count=0
-   index=index_student(name)
-   for item in classroom[index]['grades']:
-       if item['profession'] == profession:
-           avg+=item['grade']
-           count+=1
-   return avg/count
-   pass
+    total_grades = 0
+    count = 0
+    index = index_student(name)
+    if index != -1:
+        for subject, grade in classroom[index]['grades']:
+            if subject == profession:
+                total_grades += grade
+                count += 1
+        if count != 0:
+            return total_grades / count
+    return None
+
 
 def get_professions(student_name):
     professions = set()
-    
     for student in classroom:
         if student['name'] == student_name:
-            for grade in student['grades']:
-                subject = grade[0]
-                professions.add(subject)
-    
+            for profession, _ in student['grades']:
+                professions.add(profession)
     return professions
 
-            pass
+
 def index_student(name):
-    count=-1
-    for name in classroom:
-        count+=1
-        if name==name:
-            return count
+    for index, student in enumerate(classroom):
+        if student['name'] == name:
+            return index
     return -1
-        pass
