@@ -68,7 +68,7 @@ def avg_grade(name, profession):
            avg+=item['grade']
            count+=1
    return avg/count
-       pass
+   pass
 
 def get_professions(student_name):
     professions = set()
