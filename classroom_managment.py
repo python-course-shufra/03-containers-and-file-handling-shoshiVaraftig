@@ -39,7 +39,7 @@ def add_student(name, email=None):
         email = f"{name.lower()}@example.com"
     student = {'name': name, 'email': email, 'grades': []}
     classroom.append(student)
-    
+    pass
 
 def delete_student(name):
     """Delete a student from the classroom"""
@@ -52,7 +52,7 @@ def set_email(name, email):
     """Sets the email of the student"""
     index=index_student(name)
     classroom[index]['email']=email
-  
+    pass
 
 def add_grade(name, profession, grade):
 
@@ -68,7 +68,7 @@ def avg_grade(name, profession):
            avg+=item['grade']
            count+=1
        return avg/count
-
+       pass
 
 def get_professions(name):
    pro = set()
@@ -78,4 +78,4 @@ def get_professions(name):
                 proffesion = grade[0]
                 pro.add(proffesion)
             return pro    
-
+            pass
