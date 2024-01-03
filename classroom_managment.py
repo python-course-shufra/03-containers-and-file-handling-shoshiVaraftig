@@ -79,3 +79,11 @@ def get_professions(name):
                 pro.add(proffesion)
             return pro    
             pass
+def index_student(name):
+    count=-1
+    for name in classroom:
+        count+=1
+        if name==name:
+            return count
+        return -1
+        pass
