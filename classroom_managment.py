@@ -42,14 +42,12 @@ def add_student(name, email=None):
 
 
 def delete_student(name):
-    """Delete a student from the classroom"""
     index = index_student(name)
     if index != -1:
         del classroom[index]
 
 
 def set_email(name, email):
-    """Sets the email of the student"""
     index = index_student(name)
     if index != -1:
         classroom[index]['email'] = email
@@ -72,7 +70,7 @@ def avg_grade(name, profession):
                 count += 1
         if count != 0:
             return total_grades / count
-    return None
+   
 
 
 def get_professions(student_name):
