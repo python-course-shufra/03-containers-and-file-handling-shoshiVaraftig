@@ -74,12 +74,12 @@ def avg_grade(name, profession):
 
 
 def get_professions(student_name):
-    professions = set(),
+    pro = set()
     for student in classroom:
         if student['name'] == student_name:
             for profession, _ in student['grades']:
-                professions.add(profession)
-    return professions
+                pro.add(profession)
+    return pro
 
 
 def index_student(name):
