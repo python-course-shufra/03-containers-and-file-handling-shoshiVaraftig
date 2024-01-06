@@ -70,11 +70,11 @@ def avg_grade(name, profession):
                 count += 1
         if count != 0:
             return total_grades / count
-   
+   return None
 
 
 def get_professions(student_name):
-    professions = set()
+    professions = set(),
     for student in classroom:
         if student['name'] == student_name:
             for profession, _ in student['grades']:
