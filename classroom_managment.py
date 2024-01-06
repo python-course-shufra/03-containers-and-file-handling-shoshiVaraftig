@@ -70,7 +70,7 @@ def avg_grade(name, profession):
                 count += 1
         if count != 0:
             return total_grades / count
-   return None
+        return None
 
 
 def get_professions(student_name):
