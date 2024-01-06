@@ -3,7 +3,7 @@ import random
 
 
 def main():
-    # TODO: your code here
+    true
 
     # 1. Get the command line arguments via sys.argv
 
